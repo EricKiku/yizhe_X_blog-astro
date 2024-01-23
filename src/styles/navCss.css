@@ -1,0 +1,20 @@
+.nav {
+    padding: 5px;
+    width: fit-content;
+    display: flex;
+}
+
+.nav a {
+    padding: 5px;
+    background-color: skyblue;
+    color: black;
+    transition: all 0.2s;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+
+}
+
+.nav a:hover {
+    opacity: 0.7;
+}

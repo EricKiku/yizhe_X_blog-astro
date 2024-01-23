@@ -2,19 +2,52 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Shejiao from "../components/Shejiao.astro";
+import SiderBar from "../components/SiderBar.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
+const name = "yizhe Xing";
+const hobbies = ["吃饭", "睡觉", "写代码"];
+const sex = "man";
+const age = 18;
+const student = false;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+    </style>
   </head>
+
   <body>
     <Header title={SITE_TITLE} />
+    <SiderBar />
     <main>
-      <a href="/info/">info</a>
-      <h1>🧑‍🚀 你好，我是Astro</h1>
+      <Navigation />
+      <h1>🧑‍🚀 你好，我是{name}</h1>
+      我的爱好是
+      <ul>
+        {
+          hobbies.map((hobby) => {
+            return <li class="hobby"> {hobby} </li>;
+          })
+        }
+      </ul>
+      我是: <span>{sex == "man" ? "男生" : "女生"}</span>
+      <div>我是{age >= 18 ? "成年人" : "未成年人"}</div>
+      {student && "我是一个学生"}
+      <div>
+        <Shejiao plane="twitter" name="erickiku" />
+        <Shejiao plane="qq" name="erickiku" />
+        <Shejiao plane="github" name="erickiku" />
+      </div>
       <p>
         Welcome to the official <a href="https://astro.build/">Astro</a> blog starter
         template. This template serves as a lightweight, minimally-styled starting

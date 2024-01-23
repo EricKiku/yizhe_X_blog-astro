@@ -1,0 +1,19 @@
+---
+const { plane, name } = Astro.props;
+---
+
+<div class="shejiao">
+  <span class="plane">{plane}</span>:{name}
+</div>
+
+<style>
+  .shejiao {
+    margin-top: 5px;
+  }
+  .plane {
+    padding: 5px;
+    background-color: rgb(37, 37, 117);
+    color: white;
+    border-radius: 5px;
+  }
+</style>
